@@ -12,10 +12,10 @@ const Map = () => {
   return (
     <div>
       <ReactMapGL
-        {...viewport}
+        initialViewState={viewport}
         style={{ width: '100vw', height: 600 }}
-        mapboxAccessToken={process.env.REACT_APP_MAPBOX_KEY}
         mapStyle="mapbox://styles/mapbox/streets-v9"
+        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_KEY}
       ></ReactMapGL>
     </div>
   );

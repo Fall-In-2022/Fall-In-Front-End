@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactMapGL from 'react-map-gl';
+import NavigationButton from '../NavigationButton/NavigationButton';
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -16,7 +17,9 @@ const Map = () => {
         style={{ width: '100vw', height: 600 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_KEY}
-      ></ReactMapGL>
+      >
+        <NavigationButton />
+      </ReactMapGL>
     </div>
   );
 };

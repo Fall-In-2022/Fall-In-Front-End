@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.scss';
 
 // components
 import NavBar from '../src/features/NavBar/NavBar';
+import Map from '../src/features/Map/Map';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
 
       <NavBar />
+      <Map />
     </div>
   );
 }

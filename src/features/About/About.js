@@ -12,7 +12,7 @@ import Card from '@mui/material/Card';
 
 const About = () => {
   return (
-    <Container style={{ minHeight: 350, paddingTop: 20 }} maxWidth="lg">
+    <Container style={{ minHeight: 350, paddingTop: 40 }} maxWidth="lg">
       <Card
         maxwidth="lg"
         sx={{

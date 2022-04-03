@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ReactMapGL, { GeolocateControl, NavigationControl } from 'react-map-gl';
 import NavigationButton from '../NavigationButton/NavigationButton';
+import CardService from '../../services/cardService';
+import TweetNews from '../../features/TweetNews/TweetNews';
 
 const Map = () => {
   const [viewport, setViewport] = useState({
@@ -10,6 +12,9 @@ const Map = () => {
     attributionControl: false,
   });
 
+  const [data, setData] = useState(null);
+
+  //we should include setData inside fetch operation when we get the apiHost
   const getLocation = (e) => {
     let apiHost = process.env.NEXT_PUBLIC_SCRAPPY_DEV_HOST,
       lat = e.viewState.latitude,
@@ -24,6 +29,8 @@ const Map = () => {
       });
 
     console.log('getLocation', e.viewState.latitude, e.viewState.longitude);
+    const cardData = CardService.formatLocationData(e);
+    setData(cardData);
   };
 
   const bounds = [
@@ -37,7 +44,7 @@ const Map = () => {
         initialViewState={viewport}
         style={{ width: '100vw', height: 700 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
-        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_KEY}
+        mapboxAccessToken="pk.eyJ1IjoicmRpYXppcWFpciIsImEiOiJjbDFoZGZ6OXUwbDN3M2NwYjAyeGg2b3gzIn0.lvVKNHWYFC8Irwzf_3PKuQ"
         onDragEnd={getLocation}
         maxBounds={bounds}
       >
@@ -49,6 +56,7 @@ const Map = () => {
           showCompass={true}
         />
       </ReactMapGL>
+      {data && <TweetNews style={{ width: '100vw' }} reportData={data} />}
     </div>
   );
 };

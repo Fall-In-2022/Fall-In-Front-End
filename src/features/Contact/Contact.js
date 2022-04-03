@@ -14,7 +14,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import { blue } from '@mui/material/colors';
-import { padding } from '@mui/system';
+import Link from '@mui/material/Link';
 
 const Contact = () => {
   return (
@@ -65,7 +65,14 @@ const Contact = () => {
                           variant="body2"
                           color="text.primary"
                         >
-                          Rdiaz010@ucr.edu
+                          <ListItem
+                            button
+                            key="Email"
+                            component="a"
+                            href="mailto:Rdiaz010@ucr.edu"
+                          >
+                            Rdiaz010@ucr.edu
+                          </ListItem>
                         </Typography>
                       </React.Fragment>
                     }
@@ -88,7 +95,14 @@ const Contact = () => {
                           variant="body2"
                           color="text.primary"
                         >
-                          NikolaiQ@hotmail.com
+                          <ListItem
+                            button
+                            key="Email"
+                            component="a"
+                            href="mailto:NikolaiQ@hotmail.com"
+                          >
+                            NikolaiQ@hotmail.com
+                          </ListItem>
                         </Typography>
                       </React.Fragment>
                     }
@@ -111,7 +125,14 @@ const Contact = () => {
                           variant="body2"
                           color="text.primary"
                         >
-                          Ricardodizio@gmail.com
+                          <ListItem
+                            button
+                            key="Email"
+                            component="a"
+                            href="mailto:Ricardodizio@gmail.com"
+                          >
+                            Ricardodizio@gmail.com
+                          </ListItem>
                         </Typography>
                       </React.Fragment>
                     }
@@ -137,7 +158,14 @@ const Contact = () => {
                           variant="body2"
                           color="text.primary"
                         >
-                          Cristian.fernandez123@yahoo.com
+                          <ListItem
+                            button
+                            key="Email"
+                            component="a"
+                            href="mailto:Cristian.fernandez123@yahoo.com"
+                          >
+                            Cristian.fernandez123@yahoo.com
+                          </ListItem>
                         </Typography>
                       </React.Fragment>
                     }
@@ -160,7 +188,14 @@ const Contact = () => {
                           variant="body2"
                           color="text.primary"
                         >
-                          Jeffy.chee@gmail.com
+                          <ListItem
+                            button
+                            key="Email"
+                            component="a"
+                            href="mailto:Jeffy.chee@gmail.com"
+                          >
+                            Jeffy.chee@gmail.com
+                          </ListItem>
                         </Typography>
                       </React.Fragment>
                     }

@@ -17,174 +17,191 @@ import { blue } from '@mui/material/colors';
 
 const Contact = () => {
   return (
-    <Container
-      maxWidth="lg"
-      style={{ background: '#fd0', borderRadius: 19, border: 3, boxShadow: 3 }}
-    >
-      <Typography align="center" variant="h1" bgcolor="blue[500]">
-        Contact Us
-        <Stack direction="row" spacing={0.1}>
-          <Container>
-            <List
-              sx={{
-                width: '100%',
-                maxWidth: 360,
-                bgcolor: 'background.paper',
-                border: 3,
-                boxShadow: 3,
-              }}
-            >
-              <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                  <Avatar alt="Rafael Diaz" sx={{ bgcolor: blue[500] }}>
-                    RD
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary="Rafael Diaz"
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        sx={{ display: 'inline' }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        Rdiaz010@ucr.edu
-                      </Typography>
-                    </React.Fragment>
-                  }
+    <Container>
+      <Card
+        maxWidth="lg"
+        sx={{
+          background: '#fd0',
+          borderRadius: 19,
+          border: 3,
+          boxShadow: 3,
+          marginBottom: 2,
+        }}
+      >
+        <Typography align="center" variant="h1" bgcolor="blue[500]">
+          Contact Us
+          <Divider
+            variant="variant"
+            component="div"
+            sx={{ border: 3, marginBottom: 2 }}
+          />
+          <Stack direction="row" spacing={0.1}>
+            <Container>
+              <List
+                sx={{
+                  width: '100%',
+                  maxWidth: 360,
+                  bgcolor: 'background.paper',
+                  border: 3,
+                  boxShadow: 3,
+                  marginBottom: 2,
+                }}
+              >
+                <ListItem alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar alt="Rafael Diaz" sx={{ bgcolor: blue[500] }}>
+                      RD
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Rafael Diaz"
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          sx={{ display: 'inline' }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          Rdiaz010@ucr.edu
+                        </Typography>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+                <ListItem alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar alt="Nikolai Quintos" sx={{ bgcolor: blue[500] }}>
+                      NQ
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Nikolai Quintos"
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          sx={{ display: 'inline' }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          NikolaiQ@hotmail.com
+                        </Typography>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+                <ListItem alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar alt="Ricardo Do Zio" sx={{ bgcolor: blue[500] }}>
+                      RZ
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Ricardo Do Zio"
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          sx={{ display: 'inline' }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          Ricardodizio@gmail.com
+                        </Typography>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+                <ListItem alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar
+                      alt="Cristian Fernandez"
+                      sx={{ bgcolor: blue[500] }}
+                    >
+                      CF
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Cristian Fernandez"
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          sx={{ display: 'inline' }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          Cristian.fernandez123@yahoo.com
+                        </Typography>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+                <ListItem alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar alt="Jeffrey Chee" sx={{ bgcolor: blue[500] }}>
+                      JC
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Jeffrey Chee"
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          sx={{ display: 'inline' }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          Jeffy.chee@gmail.com
+                        </Typography>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+              </List>
+            </Container>
+            <Container>
+              <Card
+                sx={{
+                  maxWidth: 345,
+                  border: 3,
+                  boxShadow: 3,
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image="https://uploads-ssl.webflow.com/602de49caf8f40020c998341/613bbff3a8682805929feb29_fallin-background-front-p-1600.png"
+                  alt="Fallin Hackathon 2022"
                 />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-              <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                  <Avatar alt="Nikolai Quintos" sx={{ bgcolor: blue[500] }}>
-                    NQ
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary="Nikolai Quintos"
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        sx={{ display: 'inline' }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        NikolaiQ@hotmail.com
-                      </Typography>
-                    </React.Fragment>
-                  }
-                />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-              <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                  <Avatar alt="Ricardo Do Zio" sx={{ bgcolor: blue[500] }}>
-                    RZ
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary="Ricardo Do Zio"
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        sx={{ display: 'inline' }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        Ricardodizio@gmail.com
-                      </Typography>
-                    </React.Fragment>
-                  }
-                />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-              <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                  <Avatar alt="Cristian Fernandez" sx={{ bgcolor: blue[500] }}>
-                    CF
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary="Cristian Fernandez"
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        sx={{ display: 'inline' }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        Cristian.fernandez123@yahoo.com
-                      </Typography>
-                    </React.Fragment>
-                  }
-                />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-              <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                  <Avatar alt="Jeffrey Chee" sx={{ bgcolor: blue[500] }}>
-                    JC
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary="Jeffrey Chee"
-                  secondary={
-                    <React.Fragment>
-                      <Typography
-                        sx={{ display: 'inline' }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        Jeffy.chee@gmail.com
-                      </Typography>
-                    </React.Fragment>
-                  }
-                />
-              </ListItem>
-            </List>
-          </Container>
-          <Container>
-            <Card
-              sx={{
-                maxWidth: 345,
-                border: 3,
-                boxShadow: 3,
-              }}
-            >
-              <CardMedia
-                component="img"
-                height="140"
-                image="https://uploads-ssl.webflow.com/602de49caf8f40020c998341/613bbff3a8682805929feb29_fallin-background-front-p-1600.png"
-                alt="Fallin Hackathon 2022"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Fallin Hackathon 2022
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Online vets hackathon 🇺🇸 tech for ukraine 🇺🇦
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button
-                  variant="contained"
-                  href="https://www.fallin.today/"
-                  size="medium"
-                >
-                  Learn More
-                </Button>
-              </CardActions>
-            </Card>
-          </Container>
-        </Stack>
-      </Typography>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    Fallin Hackathon 2022
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Online vets hackathon 🇺🇸 tech for ukraine 🇺🇦
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    variant="contained"
+                    href="https://www.fallin.today/"
+                    size="medium"
+                  >
+                    Learn More
+                  </Button>
+                </CardActions>
+              </Card>
+            </Container>
+          </Stack>
+        </Typography>
+      </Card>
     </Container>
   );
 };

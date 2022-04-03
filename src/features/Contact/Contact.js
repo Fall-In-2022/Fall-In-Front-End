@@ -14,12 +14,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import { blue } from '@mui/material/colors';
+import { padding } from '@mui/system';
 
 const Contact = () => {
   return (
     <Container>
       <Card
-        maxWidth="lg"
+        maxwidth="lg"
         sx={{
           background: '#fd0',
           borderRadius: 19,
@@ -35,7 +36,7 @@ const Contact = () => {
             component="div"
             sx={{ border: 3, marginBottom: 2 }}
           />
-          <Stack direction="row" spacing={0.1}>
+          <Stack direction="row" spacing={2}>
             <Container>
               <List
                 sx={{
@@ -45,6 +46,7 @@ const Contact = () => {
                   border: 3,
                   boxShadow: 3,
                   marginBottom: 2,
+                  marginLeft: 10,
                 }}
               >
                 <ListItem alignItems="flex-start">
@@ -172,6 +174,7 @@ const Contact = () => {
                   maxWidth: 345,
                   border: 3,
                   boxShadow: 3,
+                  marginLeft: 10,
                 }}
               >
                 <CardMedia

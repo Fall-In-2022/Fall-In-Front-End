@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapGL, { GeolocateControl } from 'react-map-gl';
+import ReactMapGL, { GeolocateControl, NavigationControl } from 'react-map-gl';
 import NavigationButton from '../NavigationButton/NavigationButton';
 
 const Map = () => {
@@ -30,7 +30,12 @@ const Map = () => {
         maxBounds={bounds}
       >
         <NavigationButton />
-        <GeolocateControl position="bottom-left" />
+        <GeolocateControl style={{ marginRight: '30px' }} />
+        <NavigationControl
+          position="bottom-right"
+          style={{ marginRight: '30px' }}
+          showCompass={true}
+        />
       </ReactMapGL>
     </div>
   );

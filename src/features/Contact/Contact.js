@@ -14,7 +14,17 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import { blue } from '@mui/material/colors';
-import Link from '@mui/material/Link';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 const Contact = () => {
   return (
@@ -227,13 +237,25 @@ const Contact = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button
-                    variant="contained"
-                    href="https://www.fallin.today/"
-                    size="medium"
-                  >
-                    Learn More
-                  </Button>
+                  <Grid container spacing={2}>
+                    <Grid xs={3} md={3}>
+                      <Item sx={{ display: 'none' }}></Item>
+                    </Grid>
+                    <Grid xs={6} md={6}>
+                      <Item>
+                        <Button
+                          variant="contained"
+                          href="https://www.fallin.today/"
+                          size="medium"
+                        >
+                          Learn More
+                        </Button>
+                      </Item>
+                    </Grid>
+                    <Grid sx={{ display: 'none' }} xs={3} md={3}>
+                      <Item></Item>
+                    </Grid>
+                  </Grid>
                 </CardActions>
               </Card>
             </Container>

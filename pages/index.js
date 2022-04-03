@@ -7,6 +7,7 @@ import NavBar from '../src/features/NavBar/NavBar';
 import Map from '../src/features/Map/Map';
 import About from '../src/features/About/About';
 import Contact from '../src/features/Contact/Contact';
+import TweetNews from '../src/features/TweetNews/TweetNews';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
 
       <NavBar />
       <Map />
+      <TweetNews />
       <About />
       <Contact />
     </div>

@@ -33,7 +33,7 @@ const Contact = () => {
         maxwidth="lg"
         sx={{
           background: '#fd0',
-          borderRadius: 19,
+          borderRadius: 10,
           border: 3,
           boxShadow: 3,
           marginBottom: 2,

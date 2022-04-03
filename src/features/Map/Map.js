@@ -11,9 +11,10 @@ const Map = () => {
   });
 
   const getLocation = (e) => {
-    let lat = e.viewState.latitude,
+    let apiHost = process.env.NEXT_PUBLIC_SCRAPPY_DEV_HOST,
+      lat = e.viewState.latitude,
       long = e.viewState.longitude;
-    fetch(`http://localhost:8084/api/ukraineWebScraper?lat=${lat}&long=${long}`)
+    fetch(`${apiHost}/api/ukraineWebScraper?lat=${lat}&long=${long}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

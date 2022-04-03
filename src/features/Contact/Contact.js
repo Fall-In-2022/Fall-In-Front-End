@@ -56,7 +56,7 @@ const Contact = () => {
                   border: 3,
                   boxShadow: 3,
                   marginBottom: 2,
-                  marginLeft: 10,
+                  marginLeft: 'auto',
                 }}
               >
                 <ListItem alignItems="flex-start">

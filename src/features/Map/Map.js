@@ -16,21 +16,18 @@ const Map = () => {
 
   //we should include setData inside fetch operation when we get the apiHost
   const getLocation = (e) => {
-    let apiHost = process.env.NEXT_PUBLIC_SCRAPPY_DEV_HOST,
+    let apiHost = `http://98.147.163.177:8000/api/ukraineWebScraper?`,
       lat = e.viewState.latitude,
       long = e.viewState.longitude;
-    fetch(`${apiHost}/api/ukraineWebScraper?lat=${lat}&long=${long}`)
+    fetch(`${apiHost}lat=${lat}&long=${long}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setData(data);
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-
-    console.log('getLocation', e.viewState.latitude, e.viewState.longitude);
-    const cardData = CardService.formatLocationData(e);
-    setData(cardData);
   };
 
   const bounds = [
@@ -56,7 +53,11 @@ const Map = () => {
           showCompass={true}
         />
       </ReactMapGL>
-      {data && <TweetNews style={{ width: '100vw' }} reportData={data} />}
+      {data && (
+        <React.Fragment>
+          <TweetNews style={{ width: '100vw' }} reportData={data} />
+        </React.Fragment>
+      )}
     </div>
   );
 };

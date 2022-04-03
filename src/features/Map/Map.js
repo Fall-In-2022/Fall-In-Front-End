@@ -11,7 +11,18 @@ const Map = () => {
   });
 
   const getLocation = (e) => {
-    console.log(e);
+    let lat = e.viewState.latitude,
+      long = e.viewState.longitude;
+    fetch(`http://localhost:8084/api/ukraineWebScraper?lat=${lat}&long=${long}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+    console.log('getLocation', e.viewState.latitude, e.viewState.longitude);
   };
 
   const bounds = [

@@ -3,15 +3,13 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 // drawer component
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -19,6 +17,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+
+const pages = ['About Us', 'Contact'];
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -105,24 +105,19 @@ export default function SearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            onClick={toggleDrawer('left', true)}
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            MapBox Example
+            Fall In Hackathon 2022
           </Typography>
+          {pages.map((page) => (
+            <MenuItem key={page}>
+              <Typography textAlign="center">{page}</Typography>
+            </MenuItem>
+          ))}
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

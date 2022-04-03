@@ -5,6 +5,8 @@ import styles from '../styles/Home.module.scss';
 // components
 import NavBar from '../src/features/NavBar/NavBar';
 import Map from '../src/features/Map/Map';
+import About from '../src/features/About/About';
+import Contact from '../src/features/Contact/Contact';
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
 
       <NavBar />
       <Map />
+      <About />
+      <Contact />
     </div>
   );
 }

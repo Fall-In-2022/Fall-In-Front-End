@@ -42,7 +42,6 @@ const Map = () => {
   ];
 
   const renderedMarkers = markersArray.map((cur) => {
-    console.log(cur);
     return (
       <Marker
         latitude={cur.city_info.latitude}
@@ -59,11 +58,13 @@ const Map = () => {
 
   useEffect(() => {
     const fetchMarkers = async () => {
-      const response = await axios.get(
-        'https://scrappy-dev-backend.loadbalancer.tk/api/ukraineWebScraper/tweets?lat=50.449043&long=30.513688'
+      let lat = e.viewState.latitude;
+      let long = e.viewState.longitude;
+      let response = await axios.get(
+        `https://scrappy-dev-backend.loadbalancer.tk/api/ukraineWebScraper/tweets?lat=${lat}&long=${long}`
       );
 
-      const filteredArray = response.data.filter(
+      let filteredArray = response.data.filter(
         (cur) => cur.tweets.statuses.length
       );
 

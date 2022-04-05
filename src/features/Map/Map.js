@@ -56,23 +56,26 @@ const Map = () => {
     );
   });
 
-  useEffect((e) => {
-    const fetchMarkers = async (e) => {
-      let lat = 50.45466; //e.viewState.latitude;
-      let long = 30.5238; //e.viewState.longitude;
-      let response = await axios.get(
-        `https://scrappy-dev-backend.loadbalancer.tk/api/ukraineWebScraper/tweets?lat=${lat}&long=${long}`
-      );
+  const onMapDrag = (e) => {
+    getLocation(e);
+    fetchTweets(e);
+  };
 
-      let filteredArray = response.data.filter(
-        (cur) => cur.tweets.statuses.length
-      );
+  const fetchTweets = async (e) => {
+    let lat = e.viewState.latitude;
+    let long = e.viewState.longitude;
+    let response = await axios.get(
+      `https://scrappy-dev-backend.loadbalancer.tk/api/ukraineWebScraper/tweets?lat=${lat}&long=${long}`
+    );
 
-      setMarkersArray(filteredArray);
-    };
+    let filteredArray = response.data.filter(
+      (cur) => cur.tweets.statuses.length
+    );
 
-    fetchMarkers(e);
-  }, []);
+    console.log(filteredArray);
+
+    setMarkersArray(filteredArray);
+  };
 
   return (
     <div>
@@ -81,7 +84,7 @@ const Map = () => {
         style={{ width: '100vw', height: 700 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken="pk.eyJ1IjoicmRpYXppcWFpciIsImEiOiJjbDFoZGZ6OXUwbDN3M2NwYjAyeGg2b3gzIn0.lvVKNHWYFC8Irwzf_3PKuQ"
-        onDragEnd={getLocation}
+        onDragEnd={onMapDrag}
         maxBounds={bounds}
       >
         <NavigationButton />

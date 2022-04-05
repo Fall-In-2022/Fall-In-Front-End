@@ -57,7 +57,7 @@ const Map = () => {
   });
 
   useEffect((e) => {
-    const fetchMarkers = async () => {
+    const fetchMarkers = async (e) => {
       let lat = e.viewState.latitude;
       let long = e.viewState.longitude;
       let response = await axios.get(

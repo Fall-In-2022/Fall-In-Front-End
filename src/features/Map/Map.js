@@ -56,7 +56,7 @@ const Map = () => {
     );
   });
 
-  useEffect(() => {
+  useEffect((e) => {
     const fetchMarkers = async () => {
       let lat = e.viewState.latitude;
       let long = e.viewState.longitude;

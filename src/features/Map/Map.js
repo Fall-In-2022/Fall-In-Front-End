@@ -60,7 +60,7 @@ const Map = () => {
   useEffect(() => {
     const fetchMarkers = async () => {
       const response = await axios.get(
-        'http://98.147.163.177:8000/api/ukraineWebScraper/tweets?lat=50.449043&long=30.513688'
+        'https://scrappy-dev-backend.loadbalancer.tk/api/ukraineWebScraper/tweets?lat=50.449043&long=30.513688'
       );
 
       const filteredArray = response.data.filter(

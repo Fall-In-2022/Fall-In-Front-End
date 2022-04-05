@@ -16,7 +16,7 @@ const Map = () => {
 
   //we should include setData inside fetch operation when we get the apiHost
   const getLocation = (e) => {
-    let apiHost = `http://98.147.163.177:8000/api/ukraineWebScraper?`,
+    let apiHost = `https://scrappy-dev-backend.loadbalancer.tk/api/ukraineWebScraper?`,
       lat = e.viewState.latitude,
       long = e.viewState.longitude;
     fetch(`${apiHost}lat=${lat}&long=${long}`)

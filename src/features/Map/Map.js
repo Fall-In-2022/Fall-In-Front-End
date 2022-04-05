@@ -58,8 +58,8 @@ const Map = () => {
 
   useEffect((e) => {
     const fetchMarkers = async (e) => {
-      let lat = e.viewState.latitude;
-      let long = e.viewState.longitude;
+      let lat = 50.45466; //e.viewState.latitude;
+      let long = 30.5238; //e.viewState.longitude;
       let response = await axios.get(
         `https://scrappy-dev-backend.loadbalancer.tk/api/ukraineWebScraper/tweets?lat=${lat}&long=${long}`
       );

@@ -71,7 +71,7 @@ const Map = () => {
       setMarkersArray(filteredArray);
     };
 
-    fetchMarkers();
+    fetchMarkers(e);
   }, []);
 
   return (

@@ -5,8 +5,8 @@ import ReactMapGL, {
   Marker,
 } from 'react-map-gl';
 import NavigationButton from '../NavigationButton/NavigationButton';
-import CardService from '../../services/cardService';
-import TweetNews from '../../features/TweetNews/TweetNews';
+import NewsArticles from '../NewsArticles/NewsArticles';
+import TweetsFed from '../TweetsFed/TweetsFed';
 import axios from 'axios';
 
 const Map = () => {
@@ -36,16 +36,29 @@ const Map = () => {
       });
   };
 
+  const showTweetsCard = (e, tweetData) => {
+    console.log('Market clicked');
+    console.log(`Market latitude ${tweetData.city_info.latitude}`);
+    console.log(`Market longitude ${tweetData.city_info.longitude}`);
+    console.log(`City name ${tweetData.city_info.city_name}`);
+    console.log('Tweets:');
+    console.log(tweetData.tweets.statuses);
+  };
+
   const bounds = [
     [20.818738, 44.91581], // Southwest coordinates
     [42.27837, 53.422333], // Northeast coordinates
   ];
 
-  const renderedMarkers = markersArray.map((cur) => {
+  const renderedMarkers = markersArray.map((tweetData) => {
     return (
       <Marker
-        latitude={cur.city_info.latitude}
-        longitude={cur.city_info.longitude}
+        latitude={tweetData.city_info.latitude}
+        longitude={tweetData.city_info.longitude}
+        extra={'data'}
+        onClick={(e) => {
+          showTweetsCard(e, tweetData);
+        }}
       >
         <img
           src="https://clipground.com/images/map-pin-png-8.png"
@@ -88,6 +101,7 @@ const Map = () => {
         maxBounds={bounds}
       >
         <NavigationButton />
+        {/*<TweetsFed></TweetsFed>*/}
         <GeolocateControl style={{ marginRight: '30px' }} />
         <NavigationControl
           position="bottom-right"
@@ -98,7 +112,7 @@ const Map = () => {
       </ReactMapGL>
       {data && (
         <React.Fragment>
-          <TweetNews style={{ width: '100vw' }} reportData={data} />
+          <NewsArticles style={{ width: '100vw' }} reportData={data} />
         </React.Fragment>
       )}
     </div>

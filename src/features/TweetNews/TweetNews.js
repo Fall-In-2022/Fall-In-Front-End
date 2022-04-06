@@ -13,7 +13,7 @@ export default function BasicCard(props) {
       {props.reportData.length > 0 && <h2 style={{ margin: '3rem' }}>News</h2>}
       <Grid container spacing={3}>
         {props.reportData.slice(0, 6).map((item, index) => (
-          <Grid item xs={4} key={index}>
+          <Grid item xs={12} sm={12} md={6} lg={4} xl={3} key={index}>
             <Card style={{ margin: '3rem', height: 350 }}>
               <CardMedia
                 component="img"

@@ -81,7 +81,7 @@ const Map = () => {
     <div>
       <ReactMapGL
         initialViewState={viewport}
-        style={{ width: '100vw', height: 700 }}
+        style={{ width: '100vw', height: '70vw', maxHeight: 700 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken="pk.eyJ1IjoicmRpYXppcWFpciIsImEiOiJjbDFoZGZ6OXUwbDN3M2NwYjAyeGg2b3gzIn0.lvVKNHWYFC8Irwzf_3PKuQ"
         onDragEnd={onMapDrag}
